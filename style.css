@@ -1,24 +1,17 @@
 :root {
-  --bg: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
-  --card: rgba(255,255,255,0.1);
-  --glass: rgba(255,255,255,0.15);
-  --text: #ffffff;
-  --highlight: #ffbe0b;
+  --bg: #0f0026;
+  --pink: #ff00c8;
+  --cyan: #00f0ff;
+  --yellow: #ffe600;
+  --card: #1c003a;
+  --white: #ffffff;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
+  background: radial-gradient(circle at top, #240046, #0f0026);
   font-family: 'Segoe UI', sans-serif;
-  color: var(--text);
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  color: var(--white);
 }
 
 .wrap {
@@ -28,8 +21,9 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
   text-align: center;
+  font-size: 2.5rem;
+  color: var(--pink);
 }
 
 .sub {
@@ -45,11 +39,10 @@ h1 {
 }
 
 .card {
-  backdrop-filter: blur(10px);
   background: var(--card);
   border-radius: 20px;
   padding: 25px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.3);
+  box-shadow: 0 0 25px rgba(255,0,200,.3);
 }
 
 label {
@@ -62,7 +55,6 @@ select {
   padding: 10px;
   border-radius: 10px;
   border: none;
-  margin-top: 5px;
 }
 
 button {
@@ -75,55 +67,63 @@ button {
 }
 
 .primary {
-  background: var(--highlight);
+  background: var(--yellow);
   color: black;
-}
-
-.primary:hover {
-  transform: scale(1.1);
 }
 
 .ghost {
   background: transparent;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid var(--cyan);
+  color: var(--cyan);
 }
 
 .danger {
-  background: #ff0044;
+  background: #ff0055;
   color: white;
 }
 
+/* DUEL */
+
 .duel {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   margin-top: 15px;
 }
 
 .pick {
   flex: 1;
-  padding: 20px;
-  border-radius: 15px;
-  background: var(--glass);
+  padding: 25px;
+  border-radius: 20px;
   text-align: center;
-  font-size: 1.1rem;
   transition: .3s ease;
 }
 
+.pickA {
+  background: linear-gradient(135deg, var(--pink), #ff6ec7);
+}
+
+.pickB {
+  background: linear-gradient(135deg, var(--cyan), #00b4ff);
+}
+
 .pick:hover {
-  transform: rotate(-1deg) scale(1.05);
-  background: rgba(255,255,255,.25);
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(255,255,255,.5);
 }
 
-.tag {
+.duelLabel {
+  font-size: 0.9rem;
+  opacity: .8;
+}
+
+.duelTitle {
+  font-size: 1.4rem;
   font-weight: bold;
-  display: block;
-  margin-bottom: 8px;
+  margin-top: 10px;
+  color: white;
 }
 
-.topbox {
-  margin-top: 10px;
-}
+/* Ranking */
 
 .toprow {
   display: flex;
@@ -135,5 +135,5 @@ button {
 .foot {
   text-align: center;
   margin-top: 30px;
-  opacity: .8;
+  opacity: .7;
 }
