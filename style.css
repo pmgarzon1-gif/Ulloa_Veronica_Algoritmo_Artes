@@ -1,0 +1,139 @@
+:root {
+  --bg: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+  --card: rgba(255,255,255,0.1);
+  --glass: rgba(255,255,255,0.15);
+  --text: #ffffff;
+  --highlight: #ffbe0b;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.sub {
+  text-align: center;
+  opacity: .8;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+}
+
+.card {
+  backdrop-filter: blur(10px);
+  background: var(--card);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.3);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .3s ease;
+}
+
+.primary {
+  background: var(--highlight);
+  color: black;
+}
+
+.primary:hover {
+  transform: scale(1.1);
+}
+
+.ghost {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.danger {
+  background: #ff0044;
+  color: white;
+}
+
+.duel {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.pick {
+  flex: 1;
+  padding: 20px;
+  border-radius: 15px;
+  background: var(--glass);
+  text-align: center;
+  font-size: 1.1rem;
+  transition: .3s ease;
+}
+
+.pick:hover {
+  transform: rotate(-1deg) scale(1.05);
+  background: rgba(255,255,255,.25);
+}
+
+.tag {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.topbox {
+  margin-top: 10px;
+}
+
+.toprow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,.3);
+}
+
+.foot {
+  text-align: center;
+  margin-top: 30px;
+  opacity: .8;
+}
